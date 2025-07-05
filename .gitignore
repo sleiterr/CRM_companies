@@ -1,0 +1,24 @@
+# Ignore environment variables
+# .gitignore
+node_modules
+.env
+.next
+out
+dist
+*.log
+
+# Ignore Node modules
+node_modules/
+
+# Ignore build output
+.next/
+out/
+
+# Ignore logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
