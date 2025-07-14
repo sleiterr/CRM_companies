@@ -14,13 +14,15 @@ export interface SidebarItemProps {
 export default function SidebarItem({current, pathname, src, alt,
 children,}: SidebarItemProps) {
     return (
-        <li className="flex items-start justify-start gap-3">
+        <li className={clsx('flex items-center h-9 mx-1 gap-3.5',
+            current &&
+            'after:h-full after:ml-auto after:border-2 after:border-purple-200 after:rounded-sm')}>
             <Link
                 href={pathname}
                 className={clsx('flex items-center h-9 mx-1 gap-3.5',
                     current &&
                     'after:h-full after:ml-auto after:border-purple-200 after:rounded-sm')}
-            />
+            >
             <Image
                 className='ml-5'
                 width={18}
@@ -28,7 +30,8 @@ children,}: SidebarItemProps) {
                 src={src}
                 alt={alt}
             />
-            <span className='font-medium text-zinc-50'>{children}</span>
+             <span className='font-medium text-zinc-50'>{children}</span>
+            </Link>
         </li>
     )
 }

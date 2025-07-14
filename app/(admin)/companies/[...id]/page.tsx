@@ -1,15 +1,25 @@
-import React from 'react'
+'use client'
+
+import React, {useEffect} from 'react'
+
 import Header from '@/components/header'
+import {notFound} from "next/navigation";
 
 export interface PageProps {
-    params: {id: string[] };
+    params: {id: string };
 }
 
 export default function Page({params}: PageProps) {
+    useEffect(() => {
+        const id = Number.parseInt(params.id);
+
+        if (Number.isNaN(id)) {
+            notFound()
+        }
+    }, [params.id]);
     return (
         <>
-            <Header>Company({String(params.id)})</Header>
-            <p>{new Date().toLocaleTimeString('da-DK')}</p>
+            <Header>Company({(params.id)})</Header>
         </>
     )
 }
