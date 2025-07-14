@@ -1,17 +1,29 @@
-# Next.js build output
+# ▶️ Next.js build output
 .next/
 out/
 dist/
 
-# Environment variables
+# 🌍 Environment variables
 .env
+.env.*.local
 
-# Logs
-*.log
-
-# Node modules
+# 🧱 Node modules
 node_modules/
 
-# OS-specific files
+# 🪵 Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 💻 OS-specific files
 .DS_Store
 Thumbs.db
+
+# 🧠 JetBrains IDE (WebStorm, IntelliJ)
+.idea/
+*.iml
+
+# 🔧 VSCode settings (опційно)
+.vscode/
