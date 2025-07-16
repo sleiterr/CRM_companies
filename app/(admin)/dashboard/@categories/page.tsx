@@ -2,7 +2,7 @@ import React from 'react'
 
 import {getSummaryCategories} from '@/lib/api';
 import StatCard, {StatCardType} from '@/components/stat-card';
-import DashboardCard from '@/app/components/dashboadr-card';
+import DashboardCard from '@/components/dashboard-card';
 
 export interface PageProps {}
 
