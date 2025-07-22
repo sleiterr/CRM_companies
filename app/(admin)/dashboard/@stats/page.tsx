@@ -7,7 +7,7 @@ export interface PageProps {}
 
 const labelByStat = {
     promotions: 'Total promotions',
-    categorises: 'Total categorises',
+    categories: 'Total categorises',
     newCompanies: 'New companies',
     activeCompanies: 'Total active companies',
 }
