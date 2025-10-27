@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect } from "react";
 
 import Header from "@/components/header";
@@ -9,16 +7,14 @@ export interface PageProps {
   params: { id: string[] };
 }
 
-export default function Page({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const id = params.id[params.id.length - 1];
+  const numericId = Number.parseInt(id);
 
-  useEffect(() => {
-    const numericId = Number.parseInt(id);
+  if (Number.isNaN(numericId)) {
+    notFound();
+  }
 
-    if (Number.isNaN(numericId)) {
-      notFound();
-    }
-  }, [id]);
   return (
     <>
       <Header>Company({id})</Header>
