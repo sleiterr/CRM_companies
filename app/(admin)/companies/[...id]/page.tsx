@@ -1,17 +1,25 @@
+"use client";
+
+import React, { useEffect } from "react";
+
 import Header from "@/components/header";
 import { notFound } from "next/navigation";
 
 export interface PageProps {
-  params: { id: string[] }; // catch-all route
+  params: { id: string };
 }
 
 export default function Page({ params }: PageProps) {
-  const id = params.id[params.id.length - 1];
-  const numericId = Number.parseInt(id);
+  useEffect(() => {
+    const id = Number.parseInt(params.id);
 
-  if (Number.isNaN(numericId)) {
-    notFound(); // працює на сервері
-  }
-
-  return <Header>Company({id})</Header>;
+    if (Number.isNaN(id)) {
+      notFound();
+    }
+  }, [params.id]);
+  return (
+    <>
+      <Header>Company({params.id})</Header>
+    </>
+  );
 }
