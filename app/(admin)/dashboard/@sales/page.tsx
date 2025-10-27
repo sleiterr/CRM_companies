@@ -14,13 +14,7 @@ const data = await getSummarySales();
 
     return (
         <DashboardCard
-            label={
-            <>
-                Sales details
-                <MagicButton/>
-            </>
-        }
-        >
+            label="Sales details">
             <SummaryTable
             headers={
                 <>

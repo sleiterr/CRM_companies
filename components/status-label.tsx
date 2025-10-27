@@ -14,7 +14,7 @@ export interface StatusLabelProps {
     disabled?: "boolean";
 }
 
-export default function ({children, status, disabled}: StatusLabelProps){
+    export default function ({children, status, disabled}: StatusLabelProps){
     console.log(process.env.CRM_SECRET_KEY)
     return (
         <div className={clsx(
