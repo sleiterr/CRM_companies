@@ -1,22 +1,29 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import Header from "@/components/header";
 import { notFound } from "next/navigation";
 
 export interface PageProps {
-  params: { id: string };
+  params: { id: string[] };
 }
 
 export default function Page({ params }: PageProps) {
-  useEffect(() => {
-    const id = Number.parseInt(params.id);
+  const [validId, setValidId] = useState<string | null>(null);
+  const id = params.id[params.id.length - 1];
 
-    if (Number.isNaN(id)) {
+  useEffect(() => {
+    const numericId = Number.parseInt(id);
+    if (Number.isNaN(numericId)) {
       notFound();
+    } else {
+      setValidId(id);
     }
-  }, [params.id]);
+  }, [id]);
+
+  if (!validId) return null;
+
   return (
     <>
       <Header>Company({params.id})</Header>
