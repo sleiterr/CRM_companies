@@ -6,20 +6,22 @@ import Header from "@/components/header";
 import { notFound } from "next/navigation";
 
 export interface PageProps {
-  params: { id: string };
+  params: { id: string[] };
 }
 
 export default function Page({ params }: PageProps) {
-  useEffect(() => {
-    const id = Number.parseInt(params.id);
+  const id = params.id[params.id.length - 1];
 
-    if (Number.isNaN(id)) {
+  useEffect(() => {
+    const numericId = Number.parseInt(id);
+
+    if (Number.isNaN(numericId)) {
       notFound();
     }
-  }, [params.id]);
+  }, [id]);
   return (
     <>
-      <Header>Company({params.id})</Header>
+      <Header>Company({id})</Header>
     </>
   );
 }
