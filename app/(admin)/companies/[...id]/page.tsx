@@ -3,15 +3,21 @@
 import Header from "@/components/header";
 import { notFound } from "next/navigation";
 
-export default function Page({ params }: { params: { id: string[] } }) {
-  const id = Number(params.id?.[0]);
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string[] }>;
+}) {
+  const { id } = await params;
 
-  if (isNaN(id)) {
+  const companyId = Number.parseInt(id?.[0]);
+
+  if (Number.isNaN(companyId)) {
     notFound();
   }
   return (
     <>
-      <Header>Company({id})</Header>
+      <Header>Company({companyId})</Header>
     </>
   );
 }
