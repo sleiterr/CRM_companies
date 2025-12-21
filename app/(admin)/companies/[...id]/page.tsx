@@ -3,11 +3,7 @@
 import Header from "@/components/header";
 import { notFound } from "next/navigation";
 
-export interface PageProps {
-  params: { id: string[] };
-}
-
-export default function Page({ params }: PageProps) {
+export default function Page({ params }: { params: { id: string[] } }) {
   const id = Number.parseInt(params.id?.[0]);
 
   if (Number.isNaN(id)) {
