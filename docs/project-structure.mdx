@@ -1,0 +1,35 @@
+---
+title: Project Structure
+description: Key folders and routes
+---
+
+## Folders
+
+- `app/` - routes, layouts, and dashboard slots.
+- `components/` - UI components and forms.
+- `lib/` - API client and utilities.
+- `public/` - static assets.
+- `docs/` - documentation (MDX).
+
+## Key Routes
+
+- `/` - home page with buttons for adding a company and opening the dashboard.
+- `/dashboard` - dashboard entry page.
+- `/companies` - companies list with search.
+- `/companies/[id]` - company page (validates id, otherwise not-found).
+- `/dashboard/newCompanies` - placeholder for new companies block.
+- `/dashboard/settings` - settings page.
+
+## Dashboard Parallel Slots
+
+The dashboard is composed from independent blocks:
+
+- `@stats` - stats cards.
+- `@sales` - sales table.
+- `@categories` - category stats.
+- `@countries` - country stats.
+- `@promotions` - promotions list.
+
+## Data
+
+In `lib/api.ts` you can find MockAPI requests for stats, companies, countries, categories, and promotions.

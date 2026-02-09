@@ -1,0 +1,47 @@
+---
+title: Project Overview
+description: What this CRM is and what it includes
+---
+
+## Goal
+
+A learning CRM dashboard for practicing the Next.js App Router, server and client components, and admin UI layout.
+
+## Key Capabilities
+
+- Admin UI with a sidebar and top header.
+- Dashboard assembled from parallel routes (stats, sales, categories, countries, promotions).
+- Companies page with a list, toolbar, and search input.
+- Modal to add a company (Formik form).
+- MockAPI requests for stats and lists.
+
+## Tech Stack
+
+- Next.js 15 (App Router)
+- React 19
+- Tailwind CSS 4
+- Formik
+- Headless UI
+
+## Data and API
+
+The project uses MockAPI. The base URL is built from a token:
+
+```
+NEXT_PUBLIC_PROJECT_TOKEN=your_mockapi_project_token
+```
+
+Requests use:
+
+```
+https://<PROJECT_TOKEN>.mockapi.io/api/v1/
+```
+
+## Scripts
+
+```
+npm run dev
+npm run build
+npm run start
+npm run lint
+```

@@ -1,0 +1,46 @@
+{
+  "name": "CRM Dashboard Docs",
+  "description": "Documentation for a learning CRM project built with Next.js",
+  "sidebar": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        {
+          "title": "Home",
+          "href": "/",
+          "icon": "home"
+        },
+        {
+          "title": "Project Overview",
+          "href": "/project-overview",
+          "icon": "info"
+        },
+        {
+          "title": "Project Structure",
+          "href": "/project-structure",
+          "icon": "folder"
+        }
+      ]
+    },
+    {
+      "group": "UI",
+      "pages": [
+        {
+          "title": "Components",
+          "href": "/components",
+          "icon": "layout"
+        }
+      ]
+    },
+    {
+      "group": "Next",
+      "pages": [
+        {
+          "title": "Next Steps",
+          "href": "/next-steps",
+          "icon": "arrow-right"
+        }
+      ]
+    }
+  ]
+}
